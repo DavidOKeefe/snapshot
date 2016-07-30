@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  has_one :account_type
-  has_one :accounting_category, through: :account_type
+  belongs_to :account_type
   has_many :balances
+  has_many :account_transactions
 end
