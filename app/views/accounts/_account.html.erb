@@ -1,0 +1,11 @@
+<%= form_for @account do |form| %>
+  <% if @account.errors.any? %>
+      <% @account.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+  <% end %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.collection_select :account_type_id, AccountType.order(:name), :id, :name, include_blank: true %>
+    <%= form.submit %>
+<% end %>
