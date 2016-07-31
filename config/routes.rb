@@ -6,4 +6,8 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+  resources :entries, only: [:index, :new, :create, :edit, :update, :destroy] do
+    collection { post :import }
+  end
+
 end
