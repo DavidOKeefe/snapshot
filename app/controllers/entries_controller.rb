@@ -41,6 +41,6 @@ class EntriesController < ApplicationController
     end
 
     def entry_params
-      params.require(:entry).permit(:name, :amount, :account_id, :category_id, :transaction_type_id)
+      params.require(:entry).permit(:name, :amount, :account_id, :category_id, :transaction_type_id, :date)
     end
 end

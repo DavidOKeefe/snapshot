@@ -46,12 +46,6 @@ RSpec.describe EntriesController, type: :controller do
         }.to change(Entry, :count).by(1)
       end
 
-      it "assigns a newly created entry as @entry" do
-        post :create, {:entry => valid_attributes}, valid_session
-        expect(assigns(:entry)).to be_a(Entry)
-        expect(assigns(:entry)).to be_persisted
-      end
-
       it "redirects to the created entry" do
         post :create, {:entry => valid_attributes}, valid_session
         expect(response).to redirect_to entries_path
