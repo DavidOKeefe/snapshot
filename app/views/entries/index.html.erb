@@ -32,7 +32,7 @@
 
 <h2>Import Transactions</h2>
 
-<%= form_tag import_entries_path, multipart: true do %>
+<%= form_tag import_entry_path, multipart: true do %>
   <%= collection_select :account, :id, Account.order(:name), :id, :name %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
