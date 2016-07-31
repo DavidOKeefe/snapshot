@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+  resources :import_entry, only: [:create]
 end
