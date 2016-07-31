@@ -16,17 +16,17 @@ food = Category.create(name: 'Food and Drink')
 debit = TransactionType.create(name: 'Debit')
 credit = TransactionType.create(name: 'Credit')
 Entry.create(name: 'Starbucks',
-                          amount: 3.75,
-                          account: credit_card_account,
-                          category: food,
-                          transaction_type: debit)
+             amount: 3.75,
+             account: credit_card_account,
+             category: food,
+             transaction_type: debit)
 Entry.create(name: 'Apartment 123',
-                          amount: 800.00,
-                          account: checking_account,
-                          category: rent,
-                          transaction_type: debit)
+             amount: 800.00,
+             account: checking_account,
+             category: rent,
+             transaction_type: debit)
 Entry.create(name: 'Company 123',
-                          amount: 600.00,
-                          account: checking_account,
-                          category: income,
-                          transaction_type: credit)
+             amount: 600.00,
+             account: checking_account,
+             category: income,
+             transaction_type: credit)
