@@ -27,3 +27,11 @@
 <br>
 
 <%= link_to 'New Entry', new_entry_path %>
+
+<h2>Import Transactions</h2>
+
+<%= form_tag import_entries_path, multipart: true do %>
+  <%= collection_select :account, :id, Account.order(:name), :id, :name %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

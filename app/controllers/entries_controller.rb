@@ -35,6 +35,11 @@ class EntriesController < ApplicationController
     redirect_to entries_path, notice: 'Entry was successfully destroyed.'
   end
 
+  def import
+    Entry.import(file: params[:file], account_id: params['account']['id'].to_i)
+    redirect_to entries_path, notice: "Transactions Imported."
+  end
+
   private
     def set_entry
       @entry = Entry.find(params[:id])
