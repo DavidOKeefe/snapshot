@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Snapshot</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p id="notice"><%= notice %></p>
+  <head>
+    <title>snapshot</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <header>
+      <div class="nav">
 
-</body>
+        <h1>snapshot</h1>
+
+        <ul>
+          <li id="accounts">
+            <%= link_to "Accounts", accounts_path %>
+          </li>
+          <li>
+            <%= link_to "Transactions", entries_path %>
+          </li>
+        </ul>
+
+      </div>
+    </header>
+    <div class="main">
+      <p id="notice"><%= notice %></p>
+
+      <%= yield %>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+
+.nav {
+  background-color: #33605A;
+  height: 110px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav h1 {
+  color: white;
+  padding: 32px 0 0 32px;
+}
+
+.nav ul {
+  float: right;
+  margin: 0;
+  list-style: none;
+}
+
+.nav li {
+  float: right;
+  padding: 18px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.table {
+  margin: 15px;
+  padding: 15px;
+}
