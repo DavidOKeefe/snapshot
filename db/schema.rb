@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160731130552) do
   create_table "entries", force: :cascade do |t|
     t.string   "name"
     t.integer  "amount"
+    t.datetime "date"
+    t.string   "reference"
     t.integer  "account_id"
     t.integer  "category_id"
     t.integer  "transaction_type_id"
