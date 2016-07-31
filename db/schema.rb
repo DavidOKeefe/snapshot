@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20160730172236) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "account_transactions", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "amount"
-    t.integer  "account_id"
-    t.integer  "category_id"
-    t.string   "transaction_type"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "account_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -51,6 +41,16 @@ ActiveRecord::Schema.define(version: 20160730172236) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "financial_transactions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "amount"
+    t.integer  "account_id"
+    t.integer  "category_id"
+    t.string   "transaction_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

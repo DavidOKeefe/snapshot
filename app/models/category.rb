@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :account_transactions
+  has_many :financial_transactions
 end
