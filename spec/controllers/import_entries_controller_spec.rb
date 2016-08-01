@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImportEntryController, type: :controller do
+RSpec.describe ImportEntriesController, type: :controller do
   let(:valid_attributes) { FactoryGirl.attributes_for(:entry) }
   let(:valid_session) { {} }
 
