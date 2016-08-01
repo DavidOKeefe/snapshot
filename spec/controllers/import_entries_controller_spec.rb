@@ -1,15 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe ImportEntriesController, type: :controller do
-  let(:valid_attributes) { FactoryGirl.attributes_for(:entry) }
+  let(:import_entry) { fixture_file_upload("files/import_entry_abc_fixture.csv", "text/csv")}
   let(:valid_session) { {} }
 
   describe 'POST #create' do
     context 'with valid params' do
-      it "creates a new Entry" do
-        expect {
-          post :create, {:import_entry => valid_attributes}, valid_session
-        }.to change(Entry, :count).by(1)
+      it "redirects to the entries index" do
+        post :create,
+          { file: import_entry, account_id: "100" },
+          valid_session
+
+        expect(response).to redirect_to(entries_path)
       end
     end
   end
