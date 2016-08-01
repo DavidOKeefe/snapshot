@@ -1,4 +1,4 @@
-class ImportEntryController < ApplicationController
+class ImportEntriesController < ApplicationController
   def create
     Entry.new(entry_params).save
     redirect_to entries_path, success: "Entry created!"
