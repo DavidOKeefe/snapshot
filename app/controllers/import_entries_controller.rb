@@ -1,7 +1,6 @@
 class ImportEntriesController < ApplicationController
   def create
-    Entry.new(entry_params).save
-    redirect_to entries_path, success: "Entry created!"
+    redirect_to entries_path, success: I18n.t('.success')
   end
 
   private
@@ -9,13 +8,6 @@ class ImportEntriesController < ApplicationController
   def entry_params
     params
     .require(:import_entry)
-    .permit(
-      :name,
-      :account_id,
-      :category_id,
-      :transaction_type_id,
-      :amount,
-      :date
-      )
+    .permit(:account_id, :import_entry)
   end
 end

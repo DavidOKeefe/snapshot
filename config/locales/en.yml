@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  import_entries:
+    create:
+      success: "Entry created!"
