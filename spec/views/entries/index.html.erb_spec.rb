@@ -6,6 +6,9 @@ RSpec.describe "entries/index", type: :view do
       FactoryGirl.create(:entry),
       FactoryGirl.create(:entry)
     ])
+    assign(:import_entry, [
+      ImportCSVEntries.new
+    ])
   end
 
   it "renders a list of entries" do

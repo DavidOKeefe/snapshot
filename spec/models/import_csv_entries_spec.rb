@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe ImportCSVEntries do
-  let(:import_entry) { fixture_file_upload("files/import_entry_abc_fixture.csv", "text/csv")}
+  let(:file) { fixture_file_upload("files/import_entry_abc_fixture.csv", "text/csv")}
   let(:account_id) { "1" }
 
   let(:importer) do
     described_class.new(
       account_id: account_id,
-      import_entry: import_entry
+      file: file
     )
   end
 

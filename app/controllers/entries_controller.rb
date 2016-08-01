@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.all
+    @import_entry = ImportCSVEntries.new
   end
 
   def new

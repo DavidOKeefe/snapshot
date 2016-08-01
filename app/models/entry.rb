@@ -2,7 +2,7 @@ class Entry < ActiveRecord::Base
   belongs_to :account
   belongs_to :category
   belongs_to :transaction_type
-  validates :name, :date, :amount, presence: true
+  validates :name, :date, :amount, :account_id, presence: true
   validates_associated :account, :category, :transaction_type
 
   def self.import(file:, account_id:)

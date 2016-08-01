@@ -17,7 +17,7 @@
         <td><%= entry.date %></td>
         <td><%= entry.name %></td>
         <td><%= entry.amount %></td>
-        <td><%= entry.category.name %></td>
+        <td><%= entry.category.name if entry.category_id %></td>
         <td><%= entry.transaction_type.name %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,9 +31,8 @@
 <%= link_to 'New Entry', new_entry_path %>
 
 <h2>Import Transactions</h2>
-
-<%= form_tag import_entry_path, multipart: true do %>
-  <%= collection_select :account, :id, Account.order(:name), :id, :name %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
+<%= form_for @import_entry, { url: url_for(:controller => 'import_entries', :action => 'create') } do |form| %>
+  <%= form.collection_select :account_id, Account.order(:name), :id, :name %>
+  <%= form.file_field :file %>
+  <%= form.submit "Import" %>
 <% end %>
