@@ -6,7 +6,7 @@ feature "Importing CSV Entries" do
   scenario "successfully" do
     visit entries_path
     select(account.name, from: 'account_id')
-    page.attach_file('file', 'spec/fixtures/import_entry_abc_fixture.csv')
+    page.attach_file('file', 'spec/fixtures/files/import_entry_abc_fixture.csv')
     click_button('Import')
     expect(page).to have_content(I18n.t('import_entries.create.success'))
   end
