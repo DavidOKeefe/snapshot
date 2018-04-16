@@ -1,11 +1,15 @@
 class ImportEntriesController < ApplicationController
+  def new
+    @import_entry = ImportCSVEntries.new
+  end
+
   def create
-    i = ImportCSVEntries.new(entry_params)
-    i.import
-    if i.errors.empty?
+    @import_entry = ImportCSVEntries.new(entry_params)
+    @import_entry.import
+    if @import_entry.errors.empty?
       message = I18n.t('import_entries.create.success')
     else
-      message = "#{i.errors.full_messages}"
+      message = "#{@import_entry.errors.full_messages}"
     end
     redirect_to entries_path, notice: message
   end
