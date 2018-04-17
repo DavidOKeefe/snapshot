@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :accounts
   resources :entries, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :import_entries, only: [:new, :create]
 end

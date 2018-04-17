@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Account</th>
+      <th>Date</th>
       <th>Transaction</th>
       <th>Amount</th>
       <th>Category</th>
@@ -13,9 +14,10 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.account.name %></td>
+        <td><%= entry.date %></td>
         <td><%= entry.name %></td>
         <td><%= entry.amount %></td>
-        <td><%= entry.category.name %></td>
+        <td><%= entry.category.name if entry.category_id %></td>
         <td><%= entry.transaction_type.name %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>

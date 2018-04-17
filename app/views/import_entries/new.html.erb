@@ -1,0 +1,6 @@
+<h2>Import Transactions</h2>
+<%= form_for @import_entry, { url: url_for(:controller => 'import_entries', :action => 'create') } do |form| %>
+  <%= form.collection_select :account_id, Account.order(:name), :id, :name %>
+  <%= form.file_field :file %>
+  <%= form.submit "Import" %>
+<% end %>

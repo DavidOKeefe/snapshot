@@ -8,6 +8,8 @@
     <%= form.text_field :name %><br>
     <%= form.label :amount %>
     <%= form.number_field :amount %><br>
+    <%= form.label :date %>
+    <%= form.date_field :date %><br>
     <%= form.label :category %>
     <%= form.collection_select :category_id, Category.order(:name), :id, :name %><br>
     <%= form.label :account %>
