@@ -1,4 +1,4 @@
-class Entry < ActiveRecord::Base
+class Transaction < ActiveRecord::Base
   belongs_to :account
   belongs_to :category
   belongs_to :transaction_type

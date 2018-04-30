@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :entry do
+  factory :transaction do
     sequence(:name) { |n| "Starbucks #{n}" }
     account
     category

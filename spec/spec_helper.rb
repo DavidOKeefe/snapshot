@@ -4,6 +4,7 @@ SimpleCov.start
 require 'factory_girl_rails'
 require 'rails'
 require 'capybara/rspec'
+require 'byebug'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

@@ -13,8 +13,8 @@ RSpec.describe ImportCSVEntries do
 
   describe '#import' do
     context 'with valid params' do
-      it 'creates an Entry for each csv import entry row' do
-        expect{ importer.import }.to change{ Entry.all.size }.by(2)
+      it 'creates a transaction for each csv import row' do
+        expect{ importer.import }.to change{ Transaction.all.size }.by(2)
       end
     end
   end

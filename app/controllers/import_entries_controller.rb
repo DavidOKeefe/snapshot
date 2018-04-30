@@ -11,14 +11,12 @@ class ImportEntriesController < ApplicationController
     else
       message = "#{@import_entry.errors.full_messages}"
     end
-    redirect_to entries_path, notice: message
+    redirect_to transactions_path, notice: message
   end
 
   private
 
   def entry_params
-    params
-    .require(:import_csv_entries)
-    .permit(:account_id, :file)
+    params.require(:import_csv_entries).permit(:account_id, :file)
   end
 end

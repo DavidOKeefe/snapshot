@@ -8,10 +8,13 @@ RSpec.describe ImportEntriesController, type: :controller do
     context 'with valid params' do
       it "redirects to the entries index" do
         post :create,
-          { file: import_entry, account_id: "100" },
+          { import_csv_entries: {
+              file: import_entry, account_id: "100"
+            }
+          },
           valid_session
 
-        expect(response).to redirect_to(entries_path)
+        expect(response).to redirect_to(transactions_path)
       end
     end
   end

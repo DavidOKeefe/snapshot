@@ -1,6 +1,6 @@
-<%= form_for @entry  do |form| %>
-  <% if @entry.errors.any? %>
-    <% @entry.errors.full_messages.each do |message| %>
+<%= form_for @transaction do |form| %>
+  <% if @transaction.errors.any? %>
+    <% @transaction.errors.full_messages.each do |message| %>
       <%= message %>
       <% end %>
   <% end %>

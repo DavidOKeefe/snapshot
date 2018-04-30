@@ -8,7 +8,7 @@ class ImportCSVEntries
   def import
     csv = CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
       ActiveRecord::Base.transaction do
-        Entry.create!(
+        Transaction.create!(
           name: row[:description],
           amount: row[:amount],
           date: importable_date(row[:post_date]),
