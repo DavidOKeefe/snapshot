@@ -19,4 +19,15 @@ class Transaction < ActiveRecord::Base
     end
   end
 
+  def self.totals_by_month_and_category(year = Time.now.year)
+    joins(:category)
+    .select('EXTRACT(month from date) AS month,
+             EXTRACT(year from date) AS year,
+             categories.name AS category_name,
+             SUM(amount) AS total')
+    .where('EXTRACT(year from date) = ?', year)
+    .group('month, year, category_name')
+    .order('year, month, category_name')
+  end
+
 end
